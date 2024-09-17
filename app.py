@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify
 import requests
 from datetime import datetime
 app = Flask(__name__)
-API_KEY = '11b50c32a19fb87878c1d68d788908d5'  # Replace with your OpenWeatherMap API key
+API_KEY = '11b50c32a19fb87878c1d68d788908d5'  
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -12,7 +12,7 @@ def get_weather():
     country_code = request.form.get('countryCode')
     if not city:
         return jsonify({'error': 'Please enter the city name.'}), 400
-    # If no country code is provided, search by city only
+   
     if country_code:
         location = f"{city},{country_code}"
     else:
