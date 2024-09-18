@@ -1,259 +1,308 @@
-/* Import a cool font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Raleway:wght@400;700&display=swap');
 
 /* General Body Styling */
 body {
-  font-family: 'Raleway', sans-serif; /* Use the new font */
-  color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
-  overflow-y: auto;
-  background-image: url(https://pics.craiyon.com/2024-02-19/eDZDXPx7RtaiH0Ej7EGYjA.webp);
-  background-repeat: no-repeat;
-  background-size: cover;
+    font-family: 'Raleway', sans-serif; /* Use the new font */
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    overflow-y: auto;
+    background-image: url(https://pics.craiyon.com/2024-02-19/eDZDXPx7RtaiH0Ej7EGYjA.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* Container Styling */
 .container {
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
-  width: 90%;
-  max-width: 1200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden; /* Prevent horizontal overflow */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Prevent horizontal overflow */
 }
 
 /* Heading Styling */
 h1 {
-  font-size: 3em;
-  margin-bottom: 20px;
-  color: #ffffff;
-  animation: fadeIn 1s ease-in-out, glow 1.5s infinite alternate;
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #ffffff;
+    animation: fadeIn 1s ease-in-out, glow 1.5s infinite alternate;
 }
 
 /* Search Box Styling */
 .search-box {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 .search-box input {
-  width: 70%;
-  padding: 12px;
-  border: none;
-  border-radius: 10px;
-  font-size: 1.2em;
-  background: white;
-  color: #000000;
-  backdrop-filter: blur(10px);
+    width: 70%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    background: white;
+    color: #000000;
+    backdrop-filter: blur(10px);
 }
 
 .search-box button {
-  padding: 12px 20px;
-  border: none;
-  border-radius: 10px;
-  background-color: #00bcd4;
-  color: #ffffff;
-  font-size: 1.2em;
-  cursor: pointer;
-  margin-left: 10px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #00bcd4;
+    color: #ffffff;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .search-box button:hover {
-  background-color: #009688;
-  transform: scale(1.05);
+    background-color: #009688;
+    transform: scale(1.05);
 }
 
 /* Weather and Forecast Container Styling */
 .weather-forecast-container {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  gap: 20px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 20px;
 }
 
 /* Weather Box Styling */
 .weather-box {
-  flex: 1;
-  text-align: center;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 15px;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.5);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  transform: perspective(1000px) rotateY(0deg);
-  transition: transform 0.5s;
-  position: relative; /* Ensure relative positioning for the recommendation */
+    flex: 1;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transform: perspective(1000px) rotateY(0deg);
+    transition: transform 0.5s;
+    position: relative; /* Ensure relative positioning for the recommendation */
 }
 
 .weather-box:hover {
-  transform: perspective(1000px) rotateY(10deg);
+    transform: perspective(1000px) rotateY(10deg);
 }
 
 .weather-box .weather-icon {
-  font-size: 25em; /* Increased size to 5 times bigger */
-  margin-bottom: 10px;
-  opacity: 0.7; /* Added opacity */
-  animation: pulse 1.5s infinite;
+    font-size: 50em; /* Increased size to 5 times bigger */
+    margin-bottom: 10px;
+    opacity: 0.7; /* Added opacity */
+    animation: pulse 1.5s infinite;
 }
 
 .weather-box .temperature {
-  font-size: 3em;
-  margin-bottom: 10px;
+    font-size: 3em;
+    margin-bottom: 10px;
 }
 
 .weather-box .description {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 .weather-box .humidity,
 .weather-box .wind-speed {
-  font-size: 1.2em;
+    font-size: 1.2em;
 }
 
 .weather-box .recommendation {
-  background: rgba(0, 0, 0, 0.7);
-  padding: 15px;
-  border-radius: 10px;
-  text-align: center;
-  color: #ffffff;
-  font-size: 1.2em;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  position: absolute; /* Absolute positioning */
-  bottom: 10px; /* Space from the bottom of the box */
-  left: 9%;
-  transform: translateX(-50%);
-  display: none; /* Hidden by default */
-  animation: fadeInUp 1s ease-out, bounce 10s infinite;
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #ffffff;
+    text-align: center;
+    animation: fadeInUp 1s ease-out;
 }
 
 /* Forecast Styles */
 .forecast {
-  flex: 2;
-  border-top: 2px solid rgba(255, 255, 255, 0.3);
-  /* background: rgba(0, 0, 0, 0.6); */
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  max-height: 500px;
-  overflow-y: auto;
+    flex: 2;
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    max-height: 500px;
+    overflow-y: auto;
 }
 
 /* Forecast Heading Styling */
 .forecast h2 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  color: #ffffff;
-  animation: fadeIn 1s ease-in-out, glow 1.5s infinite alternate;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ffffff;
+    animation: fadeIn 1s ease-in-out, glow 1.5s infinite alternate;
 }
 
 /* Forecast Boxes Grid Styling */
 .forecast-boxes {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
 }
 
 /* Forecast Box Styling */
 .forecast-box {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 20px;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  animation: fadeIn 0.5s ease-in-out;
-  perspective: 1000px;
-  transform-style: preserve-3d;
-  transition: transform 0.5s;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.5s ease-in-out;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
 }
 
 .forecast-box:hover {
-  transform: rotateX(10deg);
+    transform: rotateX(10deg);
 }
 
 .forecast-box .forecast-icon {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-  animation: spin 2s linear infinite;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    animation: spin 2s linear infinite;
 }
 
 .forecast-box .forecast-temp {
-  font-size: 1.8em;
+    font-size: 1.8em;
 }
 
 /* Animations */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 @keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes glow {
+    from {
+        text-shadow: 0 0 10px #ffffff, 0 0 20px #00bcd4, 0 0 30px #00bcd4, 0 0 40px #00bcd4, 0 0 50px #00bcd4, 0 0 60px #00bcd4, 0 0 70px #00bcd4;
+    }
+    to {
+        text-shadow: 0 0 20px #ffffff, 0 0 30px #00bcd4, 0 0 40px #00bcd4, 0 0 50px #00bcd4, 0 0 60px #00bcd4, 0 0 70px #00bcd4, 0 0 80px #00bcd4;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+@keyframes fadeIn {
   from {
-    text-shadow: 0 0 10px #ffffff, 0 0 20px #00bcd4, 0 0 30px #00bcd4, 0 0 40px #00bcd4, 0 0 50px #00bcd4, 0 0 60px #00bcd4, 0 0 70px #00bcd4;
+      opacity: 0;
+      transform: translateY(-20px);
   }
   to {
-    text-shadow: 0 0 20px #ffffff, 0 0 30px #00bcd4, 0 0 40px #00bcd4, 0 0 50px #00bcd4, 0 0 60px #00bcd4, 0 0 70px #00bcd4, 0 0 80px #00bcd4;
+      opacity: 1;
+      transform: translateY(0);
   }
 }
 
 @keyframes fadeInUp {
   from {
-    opacity: 0;
-    transform: translateY(20px);
+      opacity: 0;
+      transform: translateY(20px);
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.recommendation {
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: #4c8600;
+  text-align: center;
+  animation: fadeInUp 0.5s ease-out; /* Added animation */
+}
+.recommendation {
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: #ffffff;
+  text-align: center;
+  animation: fadeIn 0.5s ease-out, bounce 1s infinite; /* Added animation */
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
   }
 }
 
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
+      transform: translateY(0);
   }
   40% {
-    transform: translateY(-30px);
+      transform: translateY(-10px);
   }
   60% {
-    transform: translateY(-15px);
+      transform: translateY(-5px);
   }
 }

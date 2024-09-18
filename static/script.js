@@ -13,7 +13,6 @@ document.getElementById("search-button").addEventListener("click", function () {
     })
     .then((response) => response.json())
     .then((data) => {
-        // Hide loading GIF
         document.getElementById("loading-gif").style.display = "none";
         if (data.error) {
             document.querySelector(".not-found").style.display = "block";
@@ -27,16 +26,16 @@ document.getElementById("search-button").addEventListener("click", function () {
         const iconUrl = `http://openweathermap.org/img/wn/${data.icon}@2x.png`;
         document.getElementById("weather-icon").src = iconUrl;
         document.querySelector(".weather-box").style.display = "block";
+
         const forecastBoxes = document.querySelector(".forecast-boxes");
         forecastBoxes.innerHTML = ""; // Clear previous forecast
         data.forecast.forEach((day) => {
-            const date = new Date(day.date * 1000);git 
-            const dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'long' });
+            const dayName = new Date(day.date * 1000).toLocaleDateString('en-US', { weekday: 'long' });
             const iconUrlForecast = `http://openweathermap.org/img/wn/${day.icon}@2x.png`;
             const box = document.createElement("div");
             box.classList.add("forecast-box", "fadeIn");
             box.innerHTML = `
-                <h3>${dayOfWeek}</h3>
+                <h3>${dayName}</h3>
                 <img src="${iconUrlForecast}" alt="${day.description}">
                 <p>Max ${day.temp_max}°C</p>
                 <p>Min ${day.temp_min}°C</p>
@@ -44,24 +43,28 @@ document.getElementById("search-button").addEventListener("click", function () {
             `;
             forecastBoxes.appendChild(box);
         });
+
+        // Recommendation logic
+        let recommendationMessage = "";
+        if (data.temperature < 15) {
+            recommendationMessage = "It's cold, wear a nice warm jacket, buddy!";
+        } else if (data.temperature > 25) {
+            recommendationMessage = "It's sunny, wear some nice shorts and a t-shirt!";
+        } else {
+            recommendationMessage = "The weather is nice, dress comfortably!";
+        }
+        const recommendationDiv = document.querySelector(".recommendation");
+        recommendationDiv.textContent = recommendationMessage;
+        recommendationDiv.style.display = "block";
+        recommendationDiv.classList.add("fadeIn"); // Add animation class
+
         // Show the forecast section
         document.querySelector(".forecast").style.display = "block";
-        // Ensure search button is visible
         document.getElementById("search-button").style.display = "block";
-
-        // Update recommendation message based on temperature
-        const recommendation = document.querySelector(".recommendation");
-        if (data.temperature >= 20) {
-            recommendation.textContent = "It's warm! Wear shorts and a t-shirt.";
-        } else {
-            recommendation.textContent = "It's cold! Wear a warm jacket.";
-        }
-        recommendation.style.display = "block"; // Show recommendation
     })
     .catch((error) => {
         console.error(error);
         document.querySelector(".not-found").style.display = "block";
-        // Ensure search button is visible
         document.getElementById("search-button").style.display = "block";
     });
 });
